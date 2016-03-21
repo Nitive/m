@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Nitive/m/issues"
   },
-  "homepage": "https://github.com/Nitive/m#readme"
+  "homepage": "https://github.com/Nitive/m#readme",
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
 }
