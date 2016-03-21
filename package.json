@@ -1,7 +1,7 @@
 {
   "name": "m",
   "version": "0.0.0",
-  "description": "",
+  "description": "Test framework written through TDD with tests written on itself",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
