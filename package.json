@@ -1,0 +1,23 @@
+{
+  "name": "m",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nitive/m.git"
+  },
+  "keywords": [
+    "test",
+    "m"
+  ],
+  "author": "Maxim Samoilov <nitive@icloud.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nitive/m/issues"
+  },
+  "homepage": "https://github.com/Nitive/m#readme"
+}
