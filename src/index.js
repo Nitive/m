@@ -11,17 +11,16 @@ const testFiles = process.argv.slice(2).map(file => {
 
 
 const successReporter = description => {
-  console.log(` ${'→'.green} ${description}`)
+  console.log(` ${'→'.green} ${description.dim}`)
 }
 
 const errorReporter = (description, err) => {
-  console.log(` ${'←'.red} ${description}`)
+  console.log(` ${'←'.red} ${description.yellow}`)
   console.log(`${err.message.red} in ${file.magenta}`)
   console.log(err.stack.gray)
 }
 
 let failed = false
-
 let file;
 
 exports.it = (description, fn) => {
