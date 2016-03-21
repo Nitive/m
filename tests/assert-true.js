@@ -1,7 +1,7 @@
 const m = require('../src/')
 
 
-m.it('should work assertTrue', () => {
-  m.assertTrue(true)
-  // m.assertTrue(false) should throw error
+m.it('m.true', () => {
+  m.true(true)
+  // m.true(false) should throw error
 })

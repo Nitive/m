@@ -9,7 +9,7 @@ exports.it = (description, fn) => {
   fn()
 }
 
-exports.assertTrue = bool => {
+exports.true = bool => {
   if (!bool) {
     throw new Error('not true')
   }
