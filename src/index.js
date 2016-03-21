@@ -4,43 +4,45 @@ const fs = require('fs')
 const path = require('path')
 require('colors')
 
-exports.it = (description, fn) => {
-  console.log(` ${'▶︎'.green} ${description}`)
-  fn()
-}
-
-exports.true = bool => {
-  if (!bool) {
-    throw new Error('not true')
-  }
-}
-
-exports.throws = fn => {
-  let throws = false
-  try {
-    fn()
-  } catch (err) {
-    throws = true
-  }
-  if (!throws) {
-    throw new Error('Function does not throw')
-  }
-}
 
 const testFiles = process.argv.slice(2).map(file => {
   return path.resolve(file)
 })
 
+
+const successReporter = description => {
+  console.log(` ${'→'.green} ${description}`)
+}
+
+const errorReporter = (description, err) => {
+  console.log(` ${'←'.red} ${description}`)
+  console.log(`${err.message.red} in ${file.magenta}`)
+  console.log(err.stack.gray)
+}
+
 let failed = false
 
-testFiles.forEach(file => {
+let file;
+
+exports.it = (description, fn) => {
   try {
-    require(file)
+    fn()
+    successReporter(description)
   } catch (err) {
-    console.log(` ${'▶︎'.red} Error in ${file}`)
-    console.log(err.message.red)
     failed = true
+    errorReporter(description, err)
   }
+}
+
+
+
+const assertions = require('./assertions')
+module.exports = Object.assign(assertions, exports)
+
+
+testFiles.forEach(f => {
+  file = f
+  require(f)
 })
 
 if (failed) {
